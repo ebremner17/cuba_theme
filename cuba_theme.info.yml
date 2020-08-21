@@ -1,0 +1,14 @@
+name: CUBA
+type: theme
+description: Theme for CUBA/ACCAU.
+base theme: bartik
+
+libraries:
+  - core/normalize
+  - cuba_theme/global-styling
+
+regions:
+  header: Header
+  highlighted: Highlighted
+  content: Content  # the content region is required
+  footer: Footer
