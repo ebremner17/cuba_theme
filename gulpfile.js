@@ -1,65 +1,66 @@
-module.exports = (function () {
-  var pkg = require('./package.json'),
-    gulp = require('gulp'),
-    gutil = require('gulp-util'),
-    minifyCSS = require('gulp-minify-css'),
-    plugins = require('gulp-load-plugins')(),
-    browserSync = require('browser-sync').create();
+var pkg = require('./package.json'),
+  gulp = require('gulp'),
+  glob = require('glob'),
+  minifyCSS = require('gulp-clean-css'),
+  plugins = require('gulp-load-plugins')();
 
-  var config = {
-    sass:'./sass/*.{scss,sass}',
-    sassSrc:'./sass/cadets_canada.scss',
-    sassIe:'./sass/ie.scss',
-    sassPrint:'./sass/print.scss',
-    css:'./css',
-    js:'./scripts',
-    jsSrc:'./js/resp.js',
-    images:'./images/*.{png,gif,jpeg,jpg,svg}',
-    imagesmin:'./images/minified',
-  };
 
-  var AUTOPREFIXER_BROWSERS = [
-    '> 1%',
-    'ie >= 8',
-    'ie_mob >= 10',
-    'ff >= 30',
-    'chrome >= 34',
-    'safari >= 7',
-    'opera >= 23',
-    'ios >= 7',
-    'android >= 4',
-    'bb >= 10'
-  ];
+var config = {
+  sass: './sass/**/*.{scss,sass}',
+  sassSrc: './sass/rwd.scss',
+  sassIe: './sass/ie.scss',
+  sassPrint: './sass/print.scss',
+  css: './css',
+  js:'./scripts',
+  jsSrc:'./js/cuba.js'
+};
 
-  gulp.task('styles',function () {
-    return gulp.src(config.sassSrc)
-    // .pipe(plugins.sourcemaps.init())
-      .pipe(plugins.plumber())
-      .pipe(plugins.sass({
-        includePaths: require('node-bourbon').includePaths,
-        outputStyle: 'collapsed'
-      }))
-      .on('error', function (err) {
-        gutil.log(err);
-        gutil.beep();
-        this.emit('end');
-      })
-      .pipe(plugins.autoprefixer({
-        browsers:AUTOPREFIXER_BROWSERS,
-        cascade: false
-      }))
-      .pipe(minifyCSS())
-      .pipe(plugins.concat('cuba.css'))
-      .pipe(gulp.dest(config.css))
-      .pipe(browserSync.stream())
-      .pipe(plugins.size({title:'css'}));
-  });
+// Transpile, concatenate and minify scripts
+function scripts() {
+  return gulp.src(config.jsSrc)
+    .pipe(plugins.jshint())
+    .pipe(plugins.jshint.reporter('jshint-stylish'))
+    .pipe(plugins.uglify())
+    .pipe(gulp.dest(config.js));
+}
 
-  gulp.task('watch',[],function () {
-    gulp.watch(config.sass,['styles']);
-  });
+// Compile styles.
+function styles() {
+  return gulp.src(config.sassSrc)
+    .pipe(plugins.plumber())
+    .pipe(plugins.sass({
+      includePaths: require('node-bourbon').includePaths,
+      outputStyle: 'collapsed'
+    }))
+    .pipe(minifyCSS())
+    .pipe(plugins.concat('cuba.css'))
+    .pipe(gulp.dest(config.css))
+    .pipe(plugins.size({title:'css'}));
+}
 
-  gulp.task('default',[],function () {
-    gulp.start('styles','watch');
-  });
-})();
+// Compile print styles.
+function stylesPrint() {
+  return gulp.src(config.sassPrint)
+    .pipe(plugins.plumber())
+    .pipe(plugins.sass({
+      includePaths: require('node-bourbon').includePaths,
+      outputStyle: 'collapsed'
+    }))
+    .pipe(minifyCSS())
+    .pipe(plugins.concat('print.css'))
+    .pipe(gulp.dest(config.css))
+    .pipe(plugins.size({title: 'css'}));
+}
+
+// Watch files.
+function watchFiles() {
+  gulp.watch(config.sass, styles);
+  gulp.watch(config.sassPrint, stylesPrint);
+  gulp.watch(config.jsSrc, scripts);
+}
+
+const build = gulp.series(styles, stylesPrint, scripts, watchFiles);
+const watch = gulp.series(watchFiles);
+
+exports.watch = watch;
+exports.default = build;
