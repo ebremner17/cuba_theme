@@ -2,6 +2,7 @@ name: CUBA
 type: theme
 description: Theme for CUBA/ACCAU.
 base theme: bartik
+core_version_requirement: ^8 || ^9
 
 libraries:
   - core/normalize

@@ -7,7 +7,7 @@ var pkg = require('./package.json'),
 
 var config = {
   sass: './sass/**/*.{scss,sass}',
-  sassSrc: './sass/rwd.scss',
+  sassSrc: './sass/cuba_theme.scss',
   sassIe: './sass/ie.scss',
   sassPrint: './sass/print.scss',
   css: './css',
@@ -38,28 +38,13 @@ function styles() {
     .pipe(plugins.size({title:'css'}));
 }
 
-// Compile print styles.
-function stylesPrint() {
-  return gulp.src(config.sassPrint)
-    .pipe(plugins.plumber())
-    .pipe(plugins.sass({
-      includePaths: require('node-bourbon').includePaths,
-      outputStyle: 'collapsed'
-    }))
-    .pipe(minifyCSS())
-    .pipe(plugins.concat('print.css'))
-    .pipe(gulp.dest(config.css))
-    .pipe(plugins.size({title: 'css'}));
-}
-
 // Watch files.
 function watchFiles() {
   gulp.watch(config.sass, styles);
-  gulp.watch(config.sassPrint, stylesPrint);
   gulp.watch(config.jsSrc, scripts);
 }
 
-const build = gulp.series(styles, stylesPrint, scripts, watchFiles);
+const build = gulp.series(styles, scripts, watchFiles);
 const watch = gulp.series(watchFiles);
 
 exports.watch = watch;

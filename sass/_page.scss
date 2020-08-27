@@ -1,0 +1,17 @@
+body.cuba-theme {
+  background-color: white;
+}
+
+#cuba-header {
+  background-color: white;
+}
+
+#cuba-page {
+  background-color: #F3F0E4;
+}
+
+#cuba-main-wrapper {
+  &.layout-main-wrapper {
+    min-height: 500px;
+  }
+}
