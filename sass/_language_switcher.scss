@@ -1,0 +1,17 @@
+.cuba-header {
+  .language-switcher-language-url {
+    display: inline-block;
+    float: right;
+    margin-top: 1rem;
+    list-style-type: none;
+
+    .language-link {
+      color: #000000;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
