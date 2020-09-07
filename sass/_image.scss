@@ -8,4 +8,8 @@
 .node .media--type-cuba-mt-image .field--type-image {
   float: inherit;
   margin: 0;
+
+  img {
+    margin: 0;
+  }
 }
