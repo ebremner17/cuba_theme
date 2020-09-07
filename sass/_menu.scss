@@ -1,0 +1,20 @@
+#block-cuba-main-navigation {
+  a {
+    text-transform: uppercase;
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: #427f28;
+    }
+  }
+
+  ul.menu a.is-active {
+    color: #427f28;
+  }
+  ul.sf-menu a,
+  ul.sf-menu span.nolink {
+    opacity: 1;
+    background-color: white;
+  }
+}
