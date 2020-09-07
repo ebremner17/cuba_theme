@@ -11,3 +11,8 @@ global-styling:
     - core/drupal
     - core/drupalSettings
     - core/jquery.once
+admin-extras:
+  version: 1.x
+  css:
+    theme:
+      css/admin.css: {}
