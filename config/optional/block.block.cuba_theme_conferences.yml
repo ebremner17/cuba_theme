@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.cuba-menu-conferences
+  module:
+    - ctools
+    - system
+  theme:
+    - cuba_theme
+id: cuba_theme_conferences
+theme: cuba_theme
+region: content
+weight: 0
+provider: null
+plugin: 'system_menu_block:cuba-menu-conferences'
+settings:
+  id: 'system_menu_block:cuba-menu-conferences'
+  label: Conferences
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      cuba_ct_conference_section: cuba_ct_conference_section
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+
