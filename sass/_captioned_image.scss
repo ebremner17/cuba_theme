@@ -1,6 +1,10 @@
 .paragraph--type--cuba-pt-captioned-image {
   position: relative;
 
+  .field--type-entity-reference {
+    margin: 0;
+  }
+
   .paragraph--type--cuba-pt-captioned-image {
     position: relative;
   }
@@ -11,15 +15,20 @@
 
   .field--name-field-cuba-ci-caption {
     background-color: #2B5316;
-    position: absolute;
-    top: 50%;
-    margin-top: -50px;
     padding: 1rem;
     color: white;
-    min-width: 500px;
 
     p {
       margin: 0;
+    }
+  }
+
+  @media screen and (min-width: 48em) {
+    .field--name-field-cuba-ci-caption {
+      position: absolute;
+      top: 50%;
+      margin-top: -50px;
+      min-width: 500px;
     }
   }
 }

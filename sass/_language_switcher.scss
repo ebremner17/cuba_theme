@@ -6,11 +6,13 @@
     list-style-type: none;
 
     .language-link {
-      color: #000000;
+      color: gray;
       text-decoration: none;
+      text-transform: uppercase;
 
       &:hover {
-        text-decoration: underline;
+        color: #4d713e;
+        text-decoration: none;
       }
     }
   }
