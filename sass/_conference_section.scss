@@ -1,4 +1,5 @@
-.page-node-type-cuba-ct-conference-section.cuba-theme {
+.page-node-type-cuba-ct-conference-section.cuba-theme,
+.past-and-future {
   .region-content {
     display: grid;
     grid-template-columns: 100%;
@@ -16,15 +17,18 @@
     }
   }
 
-  #block-cuba-theme-conferences-superfish {
+  #block-cuba-theme-conferences-superfish,
+  #block-cuba-theme-conferences-past-and-future-superfish {
     grid-column: 1 / 2;
   }
 
-  #block-cuba-theme-conferences {
+  #block-cuba-theme-conferences,
+  #block-cuba-theme-conferences-past-and-future {
     grid-column: 1 / 2;
   }
 
-  .node--type-cuba-ct-conference-section {
+  .node--type-cuba-ct-conference-section,
+  .node--type-cuba-ct-web-page {
     grid-column: 1 / 2;
 
     @media screen and (min-width: 48em) {
@@ -33,7 +37,8 @@
   }
 }
 
-#block-cuba-theme-conferences-superfish {
+#block-cuba-theme-conferences-superfish,
+#block-cuba-theme-conferences-past-and-future-superfish {
   display: block;
 
   @media screen and (min-width: 48em) {
@@ -72,8 +77,8 @@
   }
 }
 
-
-#block-cuba-theme-conferences {
+#block-cuba-theme-conferences,
+#block-cuba-theme-conferences-past-and-future {
   display: none;
 
   @media screen and (min-width: 48em) {
