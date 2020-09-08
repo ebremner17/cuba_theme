@@ -10,6 +10,7 @@
   }
 
   #block-cuba-theme-tabs {
+    grid-row: 1 / 2;
     grid-column: 1 / 2;
 
     @media screen and (min-width: 48em) {
@@ -19,19 +20,23 @@
 
   #block-cuba-theme-conferences-superfish,
   #block-cuba-theme-conferences-past-and-future-superfish {
+    grid-row: 2 / 3;
     grid-column: 1 / 2;
   }
 
   #block-cuba-theme-conferences,
   #block-cuba-theme-conferences-past-and-future {
+    grid-row: 2 / 3;
     grid-column: 1 / 2;
   }
 
   .node--type-cuba-ct-conference-section,
   .node--type-cuba-ct-web-page {
+    grid-row: 3 / 4;
     grid-column: 1 / 2;
 
     @media screen and (min-width: 48em) {
+      grid-row: 2 / 3;
       grid-column: 2 / 3;
     }
   }
