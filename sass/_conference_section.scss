@@ -5,7 +5,7 @@
     grid-template-columns: 100%;
 
     @media screen and (min-width: 48em) {
-      grid-template-columns: 15% 85%;
+      grid-template-columns: 20% 80%;
     }
   }
 
@@ -26,6 +26,7 @@
 
   #block-cuba-theme-conferences,
   #block-cuba-theme-conferences-past-and-future {
+    background-color: #F8F6EF;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
   }
@@ -38,6 +39,7 @@
     @media screen and (min-width: 48em) {
       grid-row: 2 / 3;
       grid-column: 2 / 3;
+      padding-left: 1rem;
     }
   }
 }
@@ -84,6 +86,7 @@
 
 #block-cuba-theme-conferences,
 #block-cuba-theme-conferences-past-and-future {
+  min-height: 500px;
   display: none;
 
   @media screen and (min-width: 48em) {

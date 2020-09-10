@@ -15,3 +15,13 @@ body.cuba-theme {
     min-height: 500px;
   }
 }
+
+.cuba-theme {
+  .main-content .section {
+    padding: 0;
+  }
+
+  .layout-main {
+    margin-bottom: 0;
+  }
+}
