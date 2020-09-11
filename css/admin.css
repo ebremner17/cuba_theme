@@ -5,3 +5,9 @@
 #block-seven-language-switcher .links {
   list-style-type: none;
 }
+
+.block-cuba-cbl-content-creation-links li,
+.block-cuba-cbl-management-links li {
+  list-style-type: none;
+  padding-bottom: 1rem;
+}
