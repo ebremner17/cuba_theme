@@ -1,3 +1,24 @@
 .user-login-form {
   padding: 0 1rem;
 }
+
+.sitemap {
+  padding: 0 1rem;
+
+  .menu-item--expanded {
+    list-style: none;
+  }
+
+  a {
+    &:hover {
+      color: #36482e;
+    }
+  }
+
+  .topmenu > li > a {
+      color: black;
+      pointer-events: none;
+      cursor: default;
+      text-decoration: none;
+  }
+}
