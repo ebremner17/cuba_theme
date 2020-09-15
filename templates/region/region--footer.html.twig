@@ -10,5 +10,14 @@
         Site Map
       </a>
     </li>
+    <li>
+      <a href="login">
+        {% if logged_in %}
+          <a href="{{ url('<front>') }}/user/logout">Logout</a>
+        {% else %}
+          <a href="{{ url('<front>') }}/user/login">Login</a>
+        {% endif %}
+      </a>
+    </li>
   </ul>
 </header>
