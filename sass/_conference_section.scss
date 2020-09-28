@@ -35,11 +35,11 @@
   .node--type-cuba-ct-web-page {
     grid-row: 3 / 4;
     grid-column: 1 / 2;
+    padding: 0;
 
     @media screen and (min-width: 48em) {
       grid-row: 2 / 3;
       grid-column: 2 / 3;
-      padding: 0 1rem;
     }
   }
 }
@@ -123,7 +123,8 @@
   }
 }
 
-#block-cuba-theme-conferences {
+#block-cuba-theme-conferences,
+#block-cuba-theme-conferences-past-and-future {
   .menu-item--expanded {
     list-style: none;
   }
