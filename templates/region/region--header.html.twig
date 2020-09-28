@@ -2,8 +2,9 @@
   <div class="cuba-header--logo">
     <img src="/profiles/cuba_base_profile/themes/cuba_theme/images/cuba_logo.png">
   </div>
-  <div class="cuba-header--language">
+  <div class="cuba-header--language-search">
     {{ drupal_block('language_block:language_interface', wrapper=false) }}
+    {{ drupal_block('search_form_block', wrapper=false) }}
   </div>
   <div class="cuba-header--content">
     {{ content }}

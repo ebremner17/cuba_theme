@@ -1,0 +1,20 @@
+#search-form {
+  padding: 1rem;
+
+  ~ h2 {
+    padding-left: 1rem;
+    margin: 0;
+  }
+}
+
+.search-results {
+  li {
+    margin-right: 1rem;
+  }
+}
+
+.item-list {
+  h3 {
+    padding-left: 1rem;
+  }
+}
