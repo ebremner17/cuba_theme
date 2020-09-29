@@ -93,6 +93,13 @@
     display: block;
   }
 
+  .sf-hidden {
+    height: auto !important;
+    overflow: inherit !important;
+    width: 100% !important;
+    display: block !important;
+  }
+
   .topmenu {
     > li {
       padding-bottom: 1rem;

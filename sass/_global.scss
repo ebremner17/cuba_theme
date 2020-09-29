@@ -26,3 +26,17 @@
 .node__content {
   padding: 0 1rem;
 }
+
+body.french {
+  .cuba-header,
+  .content-header {
+    border: 3px solid orange;
+  }
+}
+
+body.english {
+  .cuba-header,
+  .content-header {
+    border: 3px solid blue;
+  }
+}
