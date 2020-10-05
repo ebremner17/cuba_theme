@@ -1,14 +1,27 @@
 <footer class="cuba-footer--wrapper layout-container">
   <ul class="cuba-footer-links">
     <li>
-      <a href="{{ url('<front>') }}privacy-policy">
-        Privacy Policy
-      </a>
+      {% if language.getId() == 'fr' %}
+        <a href="{{ url('<front>') }}/politique-de-confidentialité">
+          Politique de confidentialité
+        </a>
+      {% else %}
+        <a href="{{ url('<front>') }}privacy-policy">
+          Privacy Policy
+        </a>
+      {% endif %}
     </li>
     <li>
-      <a href="{{ url('<front>') }}sitemap">
-        Site Map
+      {% if language.getId() == 'fr' %}
+        <a href="{{ url('<front>') }}fr/plan-du-site">
+          Plan du site
+        </a>
       </a>
+      {% else %}
+        <a href="{{ url('<front>') }}sitemap">
+          Site Map
+        </a>
+      {% endif %}
     </li>
     <li>
       <a href="login">
