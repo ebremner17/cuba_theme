@@ -132,7 +132,8 @@
 
 #block-cuba-theme-conferences,
 #block-cuba-theme-conferences-past-and-future {
-  .menu-item--expanded {
+  .menu-item--expanded,
+  .menu-item--collapsed {
     list-style: none;
   }
 }
