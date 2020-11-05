@@ -50,7 +50,7 @@ settings:
   smallech: ''
   smallicm: ''
   smallich: ''
-  smallamt: ''
+  smallamt: '&#x2261;'
   smallabt: '0'
   supersubs: 1
   minwidth: '12'
