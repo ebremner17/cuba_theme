@@ -3,16 +3,18 @@ global-styling:
   css:
     theme:
       css/cuba.css: {}
+admin-extras:
+  version: 1.x
+  css:
+    theme:
+      css/admin.css: {}
+conference-menu:
+  version: 1.x
   js:
-    js/cuba.js: {}
+    js/conference_menu.js: {}
   dependencies:
     - core/jquery
     - core/drupal.ajax
     - core/drupal
     - core/drupalSettings
     - core/jquery.once
-admin-extras:
-  version: 1.x
-  css:
-    theme:
-      css/admin.css: {}

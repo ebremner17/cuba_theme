@@ -1,0 +1,58 @@
+/* Style the buttons that are used to open and close the accordion panel */
+.cuba-accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+
+  &.active::after {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+
+  &.active + .cuba-panel {
+    display: block;
+  }
+
+  &::after {
+    float: right;
+    border: solid #777;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    color: #777;
+    content: '';
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.cuba-panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}
+
+.cuba-conf-menu-list {
+  list-style-type: none;
+  padding: 1rem 0;
+}
+
+.cuba-conf-menu-item {
+  padding: 0.5rem 0;
+}
+
+.cuba-conf-menu-link {
+  color: #000;
+  text-decoration: none;
+
+  &.active {
+    color: #427f28;
+  }
+}

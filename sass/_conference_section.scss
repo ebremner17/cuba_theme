@@ -18,17 +18,18 @@
     }
   }
 
-  #block-cuba-theme-conferences-superfish,
-  #block-cuba-theme-conferences-past-and-future-superfish {
-    grid-row: 2 / 3;
-    grid-column: 1 / 2;
-  }
-
-  #block-cuba-theme-conferences,
-  #block-cuba-theme-conferences-past-and-future {
+  #block-cuba-theme-conference-menu-sections {
     background-color: #F8F6EF;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
+
+    @media screen and (min-width: 48em) {
+      min-height: 500px;
+    }
+
+    .cuba-conference-menu {
+      background-color: #F8F6EF;
+    }
   }
 
   .node--type-cuba-ct-conference-section,
@@ -41,99 +42,5 @@
       grid-row: 2 / 3;
       grid-column: 2 / 3;
     }
-  }
-}
-
-#block-cuba-theme-conferences-superfish,
-#block-cuba-theme-conferences-past-and-future-superfish {
-  display: block;
-
-  @media screen and (min-width: 48em) {
-    display: none;
-  }
-
-  li {
-    padding-left: 1rem;
-  }
-
-  .sf-hidden {
-    height: auto !important;
-    overflow: inherit !important;
-    width: 100% !important;
-    display: block !important;
-  }
-
-  ul.sf-menu.sf-accordion {
-    display: block !important;
-    position: relative !important;
-    width: 70% !important;
-  }
-
-  .sf-accordion-toggle {
-    display: none;
-  }
-
-  a {
-    color: black;
-    text-decoration: none;
-
-    &.is-active {
-      display: block;
-      color: #4d713e;
-    }
-  }
-}
-
-#block-cuba-theme-conferences,
-#block-cuba-theme-conferences-past-and-future {
-  min-height: 500px;
-  display: none;
-
-  @media screen and (min-width: 48em) {
-    display: block;
-  }
-
-  .sf-hidden {
-    height: auto !important;
-    overflow: inherit !important;
-    width: 100% !important;
-    display: block !important;
-  }
-
-  .topmenu {
-    > li {
-      padding-bottom: 1rem;
-    }
-
-    > li > a {
-      display: block;
-      text-transform: uppercase;
-      pointer-events: none;
-      cursor: default;
-      text-decoration: none;
-      padding-bottom: 1rem;
-    }
-  }
-
-  a {
-    color: black;
-    padding-bottom: 10rem;
-    text-decoration: none;
-
-    &:hover {
-      color: #427f28;
-    }
-  }
-
-  ul.menu a.is-active {
-    color: #427f28;
-  }
-}
-
-#block-cuba-theme-conferences,
-#block-cuba-theme-conferences-past-and-future {
-  .menu-item--expanded,
-  .menu-item--collapsed {
-    list-style: none;
   }
 }
