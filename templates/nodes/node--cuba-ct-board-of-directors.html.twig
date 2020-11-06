@@ -1,0 +1,27 @@
+<div class="cuba-bod-person">
+  <div class="cuba-bod-person__wrapper">
+    <div class="cuba-bod-person__picture">
+      {{ content.field_cuba_bod_picture }}
+    </div>
+    <div class="cuba-bod-person__titles">
+      <div class="cuba-bod-person__name-title">
+        <h2>{{ label|field_value }}{% if content.field_cuba_bod_title[0] %} ({{ content.field_cuba_bod_title|field_value }}){% endif %}</h2>
+      </div>
+      <div class="cuba-bod-person__university">
+        {{ content.field_cuba_bod_univeristy|field_value }}
+      </div>
+      <div class="cuba-bod-person__university">
+        {{ content.field_cuba_bod_university }}
+      </div>
+      <div class="cuba-bod-person__university-position">
+        {{ content.field_cuba_bod_uni_position }}
+      </div>
+      <div class="cuba-bod-person__education">
+        {{ content.field_cuba_bod_education }}
+      </div>
+    </div>
+    <div class="cuba-bod-person__bio">
+      {{ content.field_cuba_bod_biography }}
+    </div>
+  </div>
+</div>

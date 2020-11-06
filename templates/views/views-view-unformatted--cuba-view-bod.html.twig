@@ -1,0 +1,13 @@
+{% if language == 'English' %}
+  <div class="cuba-bod-page-title">
+    <h1>Board of Directors</h1>
+  </div>
+  <div class="cuba-bod-description">
+    The board of directors is elected annually by the association’s members. Members of the CUBA Board of Directors are shown below.  Click on their names or photos to read more about each of them.
+  </div>
+{% endif %}
+<div class="cuba-bod-view">
+  {% for row in rows %}
+    {{- row.content -}}
+  {% endfor %}
+</div>
