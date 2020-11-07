@@ -37,9 +37,19 @@
     flex-wrap: wrap;
   }
 
-  &__wrapper {
+  &__row {
     display: block;
-    width: 100%;
+    padding-bottom: 1rem;
+
+    @media screen and (min-width: 48em) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    @media screen and (min-width: 48em) {
+      flex: 1 1 40%;
+    }
+
   }
 
   &__row:first-child {
@@ -49,18 +59,18 @@
     }
   }
 
-  &__row {
+  &__card {
     display: grid;
     grid-template-columns: 100%;
-    padding-bottom: 1rem;
-
-    @media screen and (min-width: 48em) {
-      flex: 1 1 40%;
-    }
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 94%;
+    padding: 0;
+    margin: 0 1rem;
 
     @media screen and (min-width: 48em) {
       grid-template-columns: 50% 50%;
       grid-gap: 2rem;
+      width: 100%;
     }
   }
 

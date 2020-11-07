@@ -5,25 +5,27 @@
 {% endif %}
 
 <div class="cuba-bod-view__row">
-  {% for key, field in fields %}
-    {% if key == 'field_cuba_bod_picture' %}
-      <div class="cuba-bod-view__picture">
-        <a href="{{ path('entity.node.canonical', {'node': nid}) }}">
-          {{ field.content }}
-        </a>
-      </div>
-    {% endif %}
-    {% if key == 'title' %}
-      <div class="cuba-bod-view__titles">
-        <h2><a href="{{ path('entity.node.canonical', {'node': nid}) }}">{{ field.content }}{% if bod_title %}({{ fields.field_cuba_bod_title.content }}){% endif %}</a></h2>
-        <div class="cuba-bod-view__university-position">
-          {{ fields.field_cuba_bod_uni_position.content }}
+  <div class="cuba-bod-view__card">
+    {% for key, field in fields %}
+      {% if key == 'field_cuba_bod_picture' %}
+        <div class="cuba-bod-view__picture">
+          <a href="{{ path('entity.node.canonical', {'node': nid}) }}">
+            {{ field.content }}
+          </a>
         </div>
+      {% endif %}
+      {% if key == 'title' %}
+        <div class="cuba-bod-view__titles">
+          <h2><a href="{{ path('entity.node.canonical', {'node': nid}) }}">{{ field.content }}{% if bod_title %}({{ fields.field_cuba_bod_title.content }}){% endif %}</a></h2>
+          <div class="cuba-bod-view__university-position">
+            {{ fields.field_cuba_bod_uni_position.content }}
+          </div>
 
-        <div class="cuba-bod-view__university-position">
-          {{ fields.field_cuba_bod_university.content }}
+          <div class="cuba-bod-view__university-position">
+            {{ fields.field_cuba_bod_university.content }}
+          </div>
         </div>
-      </div>
-    {% endif %}
-  {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>

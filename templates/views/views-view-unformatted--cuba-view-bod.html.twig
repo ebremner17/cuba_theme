@@ -1,4 +1,11 @@
-{% if language == 'English' %}
+{% if language == 'Francais' %}
+  <div class="cuba-bod-page-title">
+    <h1>Conseil d'administration</h1>
+  </div>
+  <div class="cuba-bod-description">
+    Les membres de l’Association canadienne des conseils d’administration d’universités (ACCAU) élisent chaque année les administratrices et administrateurs de cette dernière. Le conseil se compose des personnes suivantes :
+  </div>
+{% else %}
   <div class="cuba-bod-page-title">
     <h1>Board of Directors</h1>
   </div>
@@ -6,6 +13,7 @@
     The board of directors is elected annually by the association’s members. Members of the CUBA Board of Directors are shown below.  Click on their names or photos to read more about each of them.
   </div>
 {% endif %}
+
 <div class="cuba-bod-view">
   {% for row in rows %}
     {{- row.content -}}
