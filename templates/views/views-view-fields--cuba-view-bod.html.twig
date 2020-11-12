@@ -24,6 +24,9 @@
           <div class="cuba-bod-view__university-position">
             {{ fields.field_cuba_bod_university.content }}
           </div>
+          <div class="cuba-bod-view__profile">
+            <button class="button"><a href="{{ path('entity.node.canonical', {'node': nid}) }}">View Profile</a></button>
+          </div>
         </div>
       {% endif %}
     {% endfor %}
