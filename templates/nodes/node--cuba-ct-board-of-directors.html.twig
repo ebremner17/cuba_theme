@@ -1,7 +1,11 @@
 <div class="cuba-bod-person">
   <div class="cuba-bod-person__wrapper">
     <div class="cuba-bod-person__picture">
-      {{ content.field_cuba_bod_picture }}
+      {% if content.field_cuba_bod_picture[0] %}
+        {{ content.field_cuba_bod_picture }}
+      {% else %}
+        <img src="{{ base_path }}{{ active_theme_path() }}/images/default_board_member.jpg" alt="Member does not have picture" height="300" width="150">
+      {% endif %}
     </div>
     <div class="cuba-bod-person__titles">
       <div class="cuba-bod-person__name-title">
