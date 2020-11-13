@@ -17,7 +17,7 @@
             {%  if picture == "content" %}
               {{ field.content }}
             {% else %}
-              <img src="{{ base_path }}{{ active_theme_path() }}/images/default_board_member.jpg" alt="Member does not have picture">
+              <img src="/{{ active_theme_path() }}/images/default_board_member.jpg" alt="Member does not have picture">
             {% endif %}
           </a>
         </div>
