@@ -3,7 +3,6 @@
 {% if row._entity.field_cuba_bod_title[0] %}
   {% set bod_title = row._entity.field_cuba_bod_title[0] %}
 {% endif %}
-
 {% if row._entity.field_cuba_bod_picture[0] %}
   {% set picture = "content" %}
 {% endif %}
@@ -11,17 +10,15 @@
 <div class="cuba-bod-view__row">
   <div class="cuba-bod-view__card">
     {% for key, field in fields %}
-      {% if key == 'field_cuba_bod_picture' %}
-        <div class="cuba-bod-view__picture">
-          <a href="{{ path('entity.node.canonical', {'node': nid}) }}">
-            {%  if picture == "content" %}
-              {{ field.content }}
-            {% else %}
-              <img src="/{{ active_theme_path() }}/images/default_board_member.jpg" alt="Member does not have picture">
-            {% endif %}
-          </a>
-        </div>
-      {% endif %}
+      <div class="cuba-bod-view__picture">
+        <a href="{{ path('entity.node.canonical', {'node': nid}) }}">
+          {%  if picture == "content" %}
+            {{ field.content }}
+          {% else %}
+            <img src="/{{ active_theme_path() }}/images/default_board_member.jpg" alt="Member does not have picture">
+          {% endif %}
+        </a>
+      </div>
       {% if key == 'title' %}
         <div class="cuba-bod-view__titles">
           <h2><a href="{{ path('entity.node.canonical', {'node': nid}) }}">{{ field.content }}{% if bod_title %} ({{ fields.field_cuba_bod_title.content }}){% endif %}</a></h2>
