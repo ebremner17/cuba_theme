@@ -1,0 +1,47 @@
+{% set speaker_type = content.field_cuba_speaker_type | field_value %}
+{% set speaker_affiliation = content.field_cuba_speaker_affiliation | field_value %}
+{% set speaker_talk_title = content.field_cuba_speaker_talk_title | field_value %}
+
+<div class="cuba-speaker">
+  <div class="cuba-speaker__main-title">
+    <h1>{{ label }}</h1>
+    <h2>
+      {{ content.field_cuba_speaker_conference | field_value }}
+      {% if language == "English" %}
+        Speaker
+      {% else %}
+        Oratrice
+      {% endif %}
+    </h2>
+  </div>
+  <div class="cuba-speaker__wrapper">
+    <div class="cuba-speaker__card">
+      <div class="cuba-speaker__picture">
+        {{ content.field_cuba_speaker_picture }}
+      </div>
+      <div class="cuba-speaker__title">
+        <div class="cuba-speaker__type-name">
+          <h2>
+            {% if speaker_type != "" %}
+              {{ content.field_cuba_speaker_type | field_value }}<br />
+            {% endif %}
+            {{ label }}
+          </h2>
+        </div>
+        {% if speaker_affiliation != "" %}
+          <div class="cuba-speaker__affiliation">
+            {{ speaker_affiliation }}
+          </div>
+        {% endif %}
+        {% if speaker_talk_title != "" %}
+          <div class="cuba-speaker__talk-title">
+            "{{ speaker_talk_title }}"
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="cuba-speaker__bio">
+      {{ content.field_cuba_speaker_biography }}
+    </div>
+  </div>
+</div>

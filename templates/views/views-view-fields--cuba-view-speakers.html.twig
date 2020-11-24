@@ -1,0 +1,70 @@
+{% set nid = row._entity.nid[0].value %}
+
+{% if row._entity.field_cuba_speaker_picture[0] %}
+  {% set picture = "content" %}
+{% endif %}
+
+{% if row._entity.field_cuba_speaker_type[0] %}
+  {% set speaker_type = true %}
+{% else %}
+  {% set speaker_type = false %}
+{% endif %}
+
+{% if row._entity.field_cuba_speaker_affiliation[0] %}
+  {% set speaker_affiliation = true %}
+{% else %}
+  {% set speaker_affiliation = false %}
+{% endif %}
+
+{% if row._entity.field_cuba_speaker_talk_title[0] %}
+  {% set speaker_talk_title = true %}
+{% else %}
+  {% set speaker_talk_title = false %}
+{% endif %}
+
+<div class="cuba-bod-view__row">
+  <div class="cuba-bod-view__card">
+    {% for key, field in fields %}
+      {% if key == 'field_cuba_speaker_picture' %}
+        <div class="cuba-bod-view__picture">
+          <a href="{{ path('entity.node.canonical', {'node': nid}) }}">
+            {%  if picture == "content" %}
+              {{ field.content }}
+            {% else %}
+              <img src="/{{ active_theme_path() }}/images/default_board_member.jpg" alt="Member does not have picture">
+            {% endif %}
+          </a>
+        </div>
+      {% endif %}
+      {% if key == 'title' %}
+        <div class="cuba-bod-view__titles">
+
+          <div class="cuba-speaker__type-name">
+            <h2>
+              {% if speaker_type == true %}
+                {{ fields.field_cuba_speaker_type.content }}<br />
+              {% endif %}
+              {{ field.content }}
+            </h2>
+          </div>
+
+          {% if speaker_affiliation == true %}
+            <div class="cuba-speaker__affiliation">
+              {{ fields.field_cuba_speaker_affiliation.content }}
+            </div>
+          {% endif %}
+
+          {% if speaker_talk_title == true %}
+            <div class="cuba-speaker__talk-title">
+              "{{ fields.field_cuba_speaker_talk_title.content }}"
+            </div>
+          {% endif %}
+
+          <div class="cuba-bod-view__profile">
+            <button class="button"><a href="{{ path('entity.node.canonical', {'node': nid}) }}">View Profile</a></button>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,3 @@
+{% set tid = content.field_cuba_para_sp_conference|field_value[0]['#plain_text'] %}
+
+{{ drupal_view('cuba_view_speakers', 'speakers_embed', tid) }}

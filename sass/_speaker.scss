@@ -1,0 +1,67 @@
+.cuba-speaker {
+  &__wrapper {
+    padding: 1rem 0;
+  }
+
+  &__card {
+    max-width: 40rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    grid-template-columns: 100%;
+    width:calc(100% - 2rem);
+
+    @media screen and (min-width: 48em) {
+      grid-gap: 2rem;
+      grid-template-columns: 30% 70%;
+    }
+
+    .field--type-entity-reference {
+      margin: 0;
+    }
+  }
+
+  &__picture {
+    grid-column: 1 / 2;
+
+    img {
+      max-height: 300px;
+      margin: 0;
+      padding: 0;
+      height: 100% !important;
+    }
+  }
+
+  &__talk-title {
+    padding: 1rem 0;
+  }
+
+  &__bio {
+    max-width: 63rem;
+    padding: 1rem 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &__main-title {
+    text-align: center;
+
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.cuba-speakers-page-title {
+  text-align: center;
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .field--name-name {
+    display: inline-block;
+  }
+}
