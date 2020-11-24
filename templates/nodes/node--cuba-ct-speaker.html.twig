@@ -1,6 +1,7 @@
 {% set speaker_type = content.field_cuba_speaker_type | field_value %}
 {% set speaker_affiliation = content.field_cuba_speaker_affiliation | field_value %}
 {% set speaker_talk_title = content.field_cuba_speaker_talk_title | field_value %}
+{% set speaker_pos_title = content.field_cuba_speaker_pos_title | field_value %}
 
 <div class="cuba-speaker">
   <div class="cuba-speaker__main-title">
@@ -23,19 +24,30 @@
         <div class="cuba-speaker__type-name">
           <h2>
             {{ label }}
-            {% if speaker_type != "" %}
-              <br />{{ content.field_cuba_speaker_type | field_value }}
-            {% endif %}
           </h2>
         </div>
+
+        {% if speaker_type == true %}
+          <div class="cuba-speaker__speaker-type">
+            <b>{{ speaker_type }}</b>
+          </div>
+        {% endif %}
+
+        {% if speaker_pos_title == true %}
+          <div class="cuba-speaker__pos-title">
+            {{ speaker_pos_title }}
+          </div>
+        {% endif %}
+
         {% if speaker_affiliation != "" %}
           <div class="cuba-speaker__affiliation">
             {{ speaker_affiliation }}
           </div>
         {% endif %}
+
         {% if speaker_talk_title != "" %}
           <div class="cuba-speaker__talk-title">
-            {{ speaker_talk_title }}
+            <i>{{ speaker_talk_title }}</i>
           </div>
         {% endif %}
       </div>
