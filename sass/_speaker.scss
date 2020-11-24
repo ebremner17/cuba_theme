@@ -36,6 +36,16 @@
 
   &__talk-title {
     padding: 1rem 0;
+
+    @media screen and (min-width: 48em) {
+      max-width: 80%;
+    }
+  }
+
+  &__pos-title {
+    @media screen and (min-width: 48em) {
+      max-width: 80%;
+    }
   }
 
   &__bio {

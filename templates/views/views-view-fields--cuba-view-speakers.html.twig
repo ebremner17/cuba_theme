@@ -22,6 +22,12 @@
   {% set speaker_talk_title = false %}
 {% endif %}
 
+{% if row._entity.field_cuba_speaker_pos_title[0] %}
+  {% set speaker_pos_title = true %}
+{% else %}
+  {% set speaker_pos_title = false %}
+{% endif %}
+
 <div class="cuba-bod-view__row">
   <div class="cuba-bod-view__card">
     {% for key, field in fields %}
@@ -41,12 +47,20 @@
 
           <div class="cuba-speaker__type-name">
             <h2>
-              {% if speaker_type == true %}
-                {{ fields.field_cuba_speaker_type.content }}<br />
-              {% endif %}
               {{ field.content }}
             </h2>
           </div>
+          {% if speaker_type == true %}
+            <div class="cuba-speaker__speaker-type">
+              <b>{{ fields.field_cuba_speaker_type.content }}</b>
+            </div>
+          {% endif %}
+
+          {% if speaker_pos_title == true %}
+            <div class="cuba-speaker__pos-title">
+              {{ fields.field_cuba_speaker_pos_title.content }}
+            </div>
+          {% endif %}
 
           {% if speaker_affiliation == true %}
             <div class="cuba-speaker__affiliation">
@@ -56,13 +70,10 @@
 
           {% if speaker_talk_title == true %}
             <div class="cuba-speaker__talk-title">
-              "{{ fields.field_cuba_speaker_talk_title.content }}"
+              {{ fields.field_cuba_speaker_talk_title.content }}
             </div>
           {% endif %}
 
-          <div class="cuba-bod-view__profile">
-            <button class="button"><a href="{{ path('entity.node.canonical', {'node': nid}) }}">View Profile</a></button>
-          </div>
         </div>
       {% endif %}
     {% endfor %}
