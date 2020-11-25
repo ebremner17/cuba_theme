@@ -14,13 +14,23 @@
     width:calc(100% - 2rem);
 
     @media screen and (min-width: 48em) {
-      grid-gap: 2rem;
+      grid-gap: 0.5rem;
       grid-template-columns: 30% 70%;
       text-align: left;
     }
 
     .field--type-entity-reference {
       margin: 0;
+    }
+  }
+
+  &__title {
+    padding: 0 1rem;
+  }
+
+  &__type-name {
+    h2 {
+      margin: 0.5rem 0 0 0;
     }
   }
 
@@ -36,17 +46,8 @@
   }
 
   &__talk-title {
-    padding: 1rem 0;
-
-    @media screen and (min-width: 48em) {
-      max-width: 80%;
-    }
-  }
-
-  &__pos-title {
-    @media screen and (min-width: 48em) {
-      max-width: 80%;
-    }
+    padding: 0.4rem 0;
+    font-size: 0.8rem;
   }
 
   &__bio {
@@ -85,4 +86,18 @@
   .field--name-name {
     display: inline-block;
   }
+}
+
+.cuba-speaker__picture img {
+  transform: scale(1.1);
+}
+
+
+
+/* then hidding it with the wrapper */
+.field--type-image{
+
+
+
+  overflow:hidden;
 }

@@ -95,8 +95,9 @@
     grid-template-columns: 100%;
     margin: 0 1rem;
     width:calc(100% - 2rem);
+
     @media screen and (min-width: 48em) {
-      grid-gap: 2rem;
+      grid-gap: 0.5rem;
       grid-template-columns: 30% 70%;
     }
   }
@@ -120,6 +121,7 @@
 
     .field--name-field-media-image-1 {
       height: 100%;
+      width: 100%;
     }
 
     img {

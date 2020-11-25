@@ -1,10 +1,10 @@
-{% if language == 'Francais' %}
+{% if language == 'English' %}
   <div class="cuba-speakers-page-title">
-    <h1>{{ drupal_field('name', 'taxonomy_term', view.args[0]) }} Haut-parleurs</h1>
+    <h1>{{ drupal_field('name', 'taxonomy_term', view.args[0]) }} Speakers</h1>
   </div>
 {% else %}
   <div class="cuba-speakers-page-title">
-    <h1>{{ drupal_field('name', 'taxonomy_term', view.args[0]) }} Speakers</h1>
+    <h1>{{ drupal_field('name', 'taxonomy_term', view.args[0]) }} Conférenciers</h1>
   </div>
 {% endif %}
 
