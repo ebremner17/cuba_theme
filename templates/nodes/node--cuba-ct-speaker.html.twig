@@ -2,6 +2,7 @@
 {% set speaker_affiliation = content.field_cuba_speaker_affiliation | field_value %}
 {% set speaker_talk_title = content.field_cuba_speaker_talk_title | field_value %}
 {% set speaker_pos_title = content.field_cuba_speaker_pos_title | field_value %}
+{% set speaker_file = content.field_cuba_speaker_file | field_value %}
 
 <div class="cuba-speaker">
   <div class="cuba-speaker__main-title">
@@ -47,7 +48,11 @@
 
         {% if speaker_talk_title != "" %}
           <div class="cuba-speaker__talk-title">
-            <i>{{ speaker_talk_title }}</i>
+            {% if speaker_file %}
+              <a href="{{ speaker_file[0]['#markup'] }}"><i>{{ speaker_talk_title }}</i></a>
+            {% else %}
+              <i>{{ speaker_talk_title }}</i>
+            {% endif %}
           </div>
         {% endif %}
       </div>

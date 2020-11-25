@@ -28,6 +28,12 @@
   {% set speaker_pos_title = false %}
 {% endif %}
 
+{% if row._entity.field_cuba_speaker_file[0] %}
+  {% set speaker_file = true %}
+{% else %}
+  {% set speaker_file = false %}
+{% endif %}
+
 <div class="cuba-bod-view__row">
   <div class="cuba-bod-view__card">
     {% for key, field in fields %}
@@ -70,7 +76,11 @@
 
           {% if speaker_talk_title == true %}
             <div class="cuba-speaker__talk-title">
-              <i>{{ fields.field_cuba_speaker_talk_title.content }}</i>
+              {% if speaker_file == true %}
+                <a href="{{ file_url(row._entity.field_cuba_speaker_file[0].entity.uri.value) }}"><i>{{ fields.field_cuba_speaker_talk_title.content }}</i></a>
+              {% else %}
+                <i>{{ fields.field_cuba_speaker_talk_title.content }}</i>
+              {% endif %}
             </div>
           {% endif %}
 
