@@ -15,3 +15,32 @@
 .user-login-form {
   padding: 0 1rem;
 }
+
+.admin-page h2 {
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.admin-page h3 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.admin-page h4 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+@media screen and (min-width: 52em) {
+  .admin-page h2 {
+    font-size: 2.3rem;
+  }
+
+  .admin-page h3 {
+    font-size: 1.8rem;
+  }
+
+  .admin-page h4 {
+    ffont-size: 1.5rem;
+  }
+}
