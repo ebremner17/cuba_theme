@@ -11,7 +11,7 @@
   <div class="cuba-bod-view__card">
     {% for key, field in fields %}
       {% if key == 'field_cuba_bod_picture' %}
-        <div class="cuba-bod-view__picture">
+        <div class="cuba-bod-view__picture{%  if picture != "content" %} default{% endif %}">
           <a href="{{ path('entity.node.canonical', {'node': nid}) }}">
             {%  if picture == "content" %}
               {{ field.content }}
@@ -32,7 +32,13 @@
             {{ fields.field_cuba_bod_university.content }}
           </div>
           <div class="cuba-bod-view__profile">
-            <button class="button"><a href="{{ path('entity.node.canonical', {'node': nid}) }}">View Profile</a></button>
+            <button class="button"><a href="{{ path('entity.node.canonical', {'node': nid}) }}">
+            {% if language == 'English' %}
+              View Profile
+            {% else %}
+              Détails
+            {% endif %}
+            </a></button>
           </div>
         </div>
       {% endif %}

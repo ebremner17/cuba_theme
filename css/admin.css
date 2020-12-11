@@ -18,17 +18,17 @@
 
 .admin-page h2 {
   font-size: 1.7rem;
-  margin: 0;
+  margin: 1rem 0;
 }
 
 .admin-page h3 {
   font-size: 1.4rem;
-  margin: 0;
+  margin: 1rem 0;
 }
 
 .admin-page h4 {
   font-size: 1.2rem;
-  margin: 0;
+  margin: 1rem 0;
 }
 
 @media screen and (min-width: 52em) {
@@ -43,4 +43,8 @@
   .admin-page h4 {
     ffont-size: 1.5rem;
   }
+}
+
+body.admin-page {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
